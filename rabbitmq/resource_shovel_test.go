@@ -113,7 +113,7 @@ resource "rabbitmq_queue" "test" {
 
 resource "rabbitmq_shovel" "shovelTest" {
 	name = "shovelTest"
-	vhost = "${rabbitmq_queue.test.name}"
+	vhost = "${rabbitmq_queue.test.vhost}"
 	info {
 		source_uri = "amqp:///test"
 		source_exchange = "${rabbitmq_exchange.test.name}"
